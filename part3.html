@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Find your Pair </title>
+  <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js">
+  </script>
+  <style>
+  	fieldset{
+	background:lightyellow;
+	}
+	fieldset{
+	border:10px solid yellow;
+	width:720px;
+	margin-bottom:10px
+	}
+	
+	label{
+	width:180px;
+	display:inline-block;
+	text-align:right;
+	vertical-align:top;
+
+	}
+	textarea{
+	width:360px;
+	height:50px;
+	}
+	.slidertext{
+	display:inline;
+	text-align:center;
+	}
+	
+	[for~="minslider"]{
+	background:#cc0033;
+	}
+	
+	[for~="maxslider"]{
+	background:#ff33ff 
+	}
+	
+	label:hover{
+	font-size:20px;
+	}
+	
+	input:hover{
+	height:25px;
+	}
+	
+
+  </style>
+</head>
+
+<body>
+	<form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
+	<h2>Please Enter Your Details For Our Dating Website!</h2>
+	
+		<fieldset>
+			<legend>Your Face</legend>	
+			<div name="num1"><label for="avatar" >Your image:</label> 
+					<input type="file" " id="upload" name="uploaded_files" onchange="changeImage()" required /></div><br />
+			<div name="num2"><label for="image" >Image preview:</label> 
+					<img  id="preview" width="150" /></div>
+		</fieldset>
+		
+		
+		<fieldset>
+			<legend>Your General Details</legend>
+			<div name="num3"><label for="name">Name:</label>
+					<input type="text" name="name" placeholder="Your Full Name" required/></div><br />
+			<div name="num4"><label for="gender" >Gender:</label> 
+					<input type="radio" name="gender" value="Male"required />
+						<label class="slidertext" for="sex">Male</label>			
+					<input type="radio" name="gender" value="Female" required />
+						<label class="slidertext" for="sex">Female</label></div><br />
+			<div name="num5">
+			<label for="age">Age:</label>
+					<input type="number" name="age" required/></div><br />
+			<div name="num6">
+			<label for="dob">Date of Birth:</label>
+					<input type="date" name="dob" /></div><br />
+			<div name="num7"><label for="fcolor">Favorite color:</label>
+					<input type="color" name="color" /></div><br />
+			<div name="num8"><label for="country">Which country:</label>
+			<select><option disabled selected>Select country</option>
+					<option value="India">India</option>
+					<option value="Singapore">Singapore</option>
+					<option value="Japan">Japan</option>
+					<option value="Switzerland">Switzerland</option>
+					<option value="Australia">Australia</option>
+			</select></div>
+		</fieldset>
+		
+		
+		
+		<fieldset>
+			<legend>Your Indicators</legend>
+				<div name="num9">
+				<label for="height">Height:</label>
+						<label class="slidertext" for="minslider" ">Short</label> 
+							<input type="range" min="0" max="100" />
+						<label class="slidertext" for="maxslider">Tall</label></div><br />
+				<div name="num10
+				"><label for="salary">Salary:</label>
+						<label class="slidertext" for="minslider" >Poor </label>
+							<input type="range" min="0" max="100" />
+						<label class="slidertext" for="maxslider">Rich</label></div><br />
+		</fieldset>
+		
+		
+		<fieldset>
+			<legend>Your Contact Information</legend>
+				<div name="num11">
+				<label for="email">Email:</label>
+						<input type="email" name="email" required/></div><br />
+				<div name="num12"><label for="mobile">Mobile:</label>
+						<input type="tel" name="number" /></div><br />
+				<div name="num13"><label for="address">Address:</label>
+						<textarea name="address"></textarea></div><br />
+				<div name="num14"><label for="contact">Method to contact you:</label>
+					<input type="checkbox" value="Email" name="contact"/>
+						<label class="slidertext"for="email">Email</label>
+					<input type="checkbox" value="Whatsapp"	name="conact" />
+						<label class="slidertext" for="whatsapp">Whatsapp</label>
+					<input type="checkbox" value="In-app chat" name="contact" />
+						<label class="slidertext" for="Inappchat">In-app chat</label></div>
+		</fieldset>
+		
+		<input type="submit" value="Submit" name="submit" />
+	</form>	
+	
+</body>
+</html>

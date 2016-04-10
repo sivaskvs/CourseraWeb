@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> </title>
+  <meta charset="utf-8" />
+  <script>
+  function do_game()
+  {
+  var colors=["blue","cyan","gold","gray","green","magenta","orange","red","white","yellow"];
+  var target_index = Math.floor(Math.random()*10);
+  var target = colors[target_index];
+  var guess_input,i;
+  var flag=0;
+  var count=1;
+  var position;
+  alert("Answer is "+target);
+  
+    function check_guess()
+  {
+  guess_input =	prompt("I am thinking of one of these colours: \n\n blue,cyan,gold,gray,green,magenta,orange,red,white,yellow \n\n What color am I thinking of?"); 
+  
+ 
+  for(i=0;i<10;i++)
+    {
+  	if(guess_input==colors[i])
+		{
+		flag=1;
+		}
+    }
+  if(flag==0)
+  	{
+  	alert("I dont recognize color");
+	}
+	flag=0;
+   }	
+  
+
+  do
+  {
+  check_guess();
+   if(guess_input!="")
+   {
+  	if(target==guess_input)
+		{
+		document.bgColor=target;
+  		alert("You are Right..You took "+count+" guesses to find the answer");
+		
+		}	
+	else if(target<guess_input)
+		alert("Hint:Your color is alphabetically higher than mine");
+	else
+		alert("Hint:Your color is alphabetically lower than mine");
+   }
+   count++;
+  }while(target!=guess_input);
+  
+  }
+  </script>
+  
+</head>
+
+<body onload="do_game()">
+
+</body>
+</html>

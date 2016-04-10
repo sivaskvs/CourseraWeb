@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> </title>
+  <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js">
+  </script>
+</head>
+
+<body>
+	<form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
+	<h2>Please Enter Your Details For Our Dating Website!</h2>
+	
+		<fieldset>
+			<legend>Your Face</legend>	
+			<label for="avatar">Your image:</label> 
+					<input type="file" id="upload" name="uploaded_files" onchange="changeImage()" required /><br />
+			<label for="image">Image preview:</label> 
+					<img  id="preview" width="150" />
+		</fieldset>
+		
+		
+		<fieldset>
+			<legend>Your General Details</legend>
+			<label for="name">Name:</label>
+					<input type="text" name="name" placeholder="Your Full Name" required/><br />
+			<label for="gender">Gender:</label> 	
+					<input type="radio" name="gender" value="Male"required />Male			
+					<input type="radio" name="gender" value="Female" required />Female<br />
+			<label for="age">Age:</label>
+					<input type="number" name="age" required/><br />
+			<label for="dob">Date of Birth:</label>
+					<input type="date" name="dob" /><br />
+			<label for="fcolor">Favorite color:</label>
+					<input type="color" name="color" /><br />
+			<label for="country">Which country:</label>
+			<select><option disabled selected>Select country</option>
+					<option value="India">India</option>
+					<option value="Singapore">Singapore</option>
+					<option value="Japan">Japan</option>
+					<option value="Switzerland">Switzerland</option>
+					
+					<option value="Australia">Australia</option>
+			</select>
+		</fieldset>
+		
+		
+		
+		<fieldset>
+			<legend>Your Indicators</legend>
+				<label for="height">Height:</label>
+						Short <input type="range" min="0" max="100" />Tall<br /> <br />
+				<label for="salary">Salary:</label>
+						Poor <input type="range" min="0" max="100" />Rich<br /><br />
+		</fieldset>
+		
+		
+		<fieldset>
+			<legend>Your Contact Information</legend>
+				<label for="email">Email:</label>
+						<input type="email" name="email" required/><br />
+				<label for="mobile">Mobile:</label>
+						<input type="tel" name="number" /><br />
+				<label for="address">Address:</label>
+						<textarea cols="25" rows="2" name="address"></textarea><br />
+				<label for="contact">Method to contact you:</label>
+					<input type="checkbox" value="Email" name="contact"/>Email
+					<input type="checkbox" value="Whatsapp"	name="conact" />Whatsapp
+					<input type="checkbox" value="In-app chat" name="contact" />In-app chat
+		</fieldset>
+		
+		<input type="submit" value="Submit" name="submit" />
+	</form>	
+	
+</body>
+</html>
